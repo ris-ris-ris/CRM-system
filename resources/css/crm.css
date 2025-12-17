@@ -1,0 +1,229 @@
+/* CRM Стили с эффектами */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Анимации появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Эффекты для карточек */
+.crm-card {
+    animation: fadeInUp 0.5s ease-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.crm-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+/* Оранжевые кнопки в стиле главной страницы - ВСЕ КНОПКИ */
+.btn-orange, .btn-premium, .btn-admin, button[type="submit"], .btn-primary,
+button.btn-premium, button.btn-admin, button.btn-orange,
+a.btn-premium, a.btn-admin, a.btn-orange,
+button:not([class*="border"]):not([class*="text-red"]):not([class*="text-gray"]):not([class*="hover:bg-gray"]) {
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%) !important;
+    color: white !important;
+    box-shadow: 0 10px 40px rgba(239, 68, 68, 0.4) !important;
+    border: none !important;
+    transition: all 0.3s !important;
+}
+
+.btn-orange:hover, .btn-premium:hover, .btn-admin:hover, button[type="submit"]:hover, .btn-primary:hover,
+button.btn-premium:hover, button.btn-admin:hover, button.btn-orange:hover,
+a.btn-premium:hover, a.btn-admin:hover, a.btn-orange:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 20px 60px rgba(239, 68, 68, 0.6) !important;
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%) !important;
+}
+
+/* Исключения - кнопки отмены и удаления остаются как есть */
+button[onclick*="closeModal"], button[onclick*="Отмена"], 
+button.text-red, a.text-red, button.bg-gray, button.bg-red-600 {
+    background: inherit !important;
+    box-shadow: none !important;
+}
+
+/* Эффекты для кнопок */
+.btn-crm {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.btn-crm::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-crm:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Градиентные границы */
+.gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Эффект стекла */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Анимация загрузки */
+.loading-shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Эффект свечения */
+.glow-effect {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.glow-effect:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Плавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Улучшенные таблицы */
+.table-enhanced {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-enhanced tbody tr {
+    transition: all 0.2s;
+}
+
+.table-enhanced tbody tr:hover {
+    background: rgba(59, 130, 246, 0.05);
+    transform: scale(1.01);
+}
+
+/* Модальные окна с эффектом */
+.modal-backdrop {
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Исправление для dropdown меню - всегда на переднем плане */
+nav .relative {
+    z-index: 99999 !important;
+    position: relative !important;
+}
+
+nav .relative > div[x-show] {
+    z-index: 99999999 !important;
+    position: absolute !important;
+}
+
+/* Убираем overflow: hidden с контейнеров, которые могут скрывать dropdown */
+.max-w-7xl,
+.max-w-7xl > *,
+.premium-card,
+.crm-card {
+    overflow: visible !important;
+}
+
+/* Оранжевый градиент для активных вкладок */
+.nav-link-active {
+    position: relative;
+    border-bottom: none !important;
+}
+
+.nav-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+    border-radius: 2px 2px 0 0;
+}
+
+.nav-link-active-text {
+    background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
