@@ -127,20 +127,20 @@
 
 ---
 
-![](/assets/screenshots/01.png)
-![](/assets/screenshots/02.png)
-![](/assets/screenshots/03.png)
-![](/assets/screenshots/04.png)
-![](/assets/screenshots/05.png)
-![](/assets/screenshots/06.png)
-![](/assets/screenshots/07.png)
-![](/assets/screenshots/08.png)
-![](/assets/screenshots/09.png)
-![](/assets/screenshots/10.png)
-![](/assets/screenshots/11.png)
-![](/assets/screenshots/12.png)
-![](/assets/screenshots/13.png)
-![](/assets/screenshots/14.png)
+![](/assets/01.png)
+![](/assets/02.png)
+![](/assets/03.png)
+![](/assets/04.png)
+![](/assets/05.png)
+![](/assets/06.png)
+![](/assets/07.png)
+![](/assets/08.png)
+![](/assets/09.png)
+![](/assets/10.png)
+![](/assets/11.png)
+![](/assets/12.png)
+![](/assets/13.png)
+![](/assets/14.png)
 
 ## Версия
 
